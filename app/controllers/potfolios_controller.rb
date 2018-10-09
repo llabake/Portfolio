@@ -21,4 +21,19 @@ class PotfoliosController < ApplicationController
     end
   end
 
+  def edit
+    @potfolio_item = Potfolio.find(params[:id])
+  end
+
+  def update
+    @potfolio_item = Potfolio.find(params[:id])
+    
+    respond_to do |format|
+      if @potfolio_item.update(params.require(:potfolio).permit(:title, :body, :subtitle))
+        format.html { redirect_to potfolios_path, notice: 'The record successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
 end
