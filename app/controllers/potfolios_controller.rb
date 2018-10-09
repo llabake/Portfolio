@@ -4,4 +4,21 @@ class PotfoliosController < ApplicationController
   def index
     @potfolio_items = Potfolio.all
   end
+
+  def new
+    @potfolio_item = Potfolio.new
+  end
+
+  def create
+    @potfolio_item = Potfolio.new(params.require(:potfolio).permit(:title, :body, :subtitle))
+
+    respond_to do |format|
+      if @potfolio_item.save
+        format.html { redirect_to potfolios_path, notice: 'Your potfolio item is now live' }
+      else
+        format.html { render :new }
+      end
+    end
+  end
+
 end

@@ -4,5 +4,5 @@
   <p><%= potfolio_item.title%></p>
   <p><%= potfolio_item.subtitle%></p>
   <p><%= potfolio_item.body%></p>
-  <%= image_tag potfolio_item.thumb_image%>
+  <%= image_tag potfolio_item.thumb_image unless potfolio_item.thumb_image.nil?%>
 <% end %>
