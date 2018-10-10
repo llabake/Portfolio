@@ -40,4 +40,15 @@ class PotfoliosController < ApplicationController
   def show
     @potfolio_item = Potfolio.find(params[:id])
   end
+
+  def destroy
+    # Perform the lookup
+    @potfolio_item = Potfolio.find(params[:id])
+    # Destroy/delete the record
+    @potfolio_item.destroy
+    # Redirect
+    respond_to do |format|
+      format.html { redirect_to potfolios_path, notice: 'Record was removed ' }
+    end
+  end
 end
