@@ -3,7 +3,7 @@
 
 <%=link_to "Create New Item", new_potfolio_path %>
 <% @potfolio_items.each do |potfolio_item| %>
-  <p><%= link_to potfolio_item.title, potfolio_path(potfolio_item)%></p>
+  <p><%= link_to potfolio_item.title, potfolio_show_path(potfolio_item)%></p>
   <p><%= potfolio_item.subtitle%></p>
   <p><%= potfolio_item.body%></p>
   <%= image_tag potfolio_item.thumb_image unless potfolio_item.thumb_image.nil?%>

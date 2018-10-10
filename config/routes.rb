@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :potfolios
+  resources :potfolios, except: [:show]
+
+  get 'potfolio/:id', to: 'potfolios#show', as: 'potfolio_show'
   resources :blogs
 
   root to: 'pages#home'
