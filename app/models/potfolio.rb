@@ -6,4 +6,11 @@ class Potfolio < ApplicationRecord
   end
 
   scope :ruby_on_rails_portfolio_items, -> { where(subtitle: 'Angular') }
+
+  after_initialize :set_defaults
+
+  def set_defaults
+    self.main_image ||= 'http://placehold.it/600X400'
+    self.thumb_image ||= 'http://placehold.it/350X150'
+  end
 end
