@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 #
 gem 'rb-readline'
-
+gem 'devise', '~> 4.6', '>= 4.6.2'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
