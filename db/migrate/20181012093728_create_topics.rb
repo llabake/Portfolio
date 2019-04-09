@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
-class CreateBlogs < ActiveRecord::Migration[5.2]
+class CreateTopics < ActiveRecord::Migration[5.2]
   def change
-    create_table :blogs do |t|
+    create_table :topics do |t|
       t.string :title
-      t.text :body
 
       t.timestamps
     end

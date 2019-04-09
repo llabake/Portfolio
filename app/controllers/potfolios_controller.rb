@@ -7,10 +7,15 @@ class PotfoliosController < ApplicationController
 
   def new
     @potfolio_item = Potfolio.new
+    3.times { @potfolio_item.technologies.build }
+  end
+
+  def angular
+    @angular_potfolio_items = Potfolio.angular
   end
 
   def create
-    @potfolio_item = Potfolio.new(params.require(:potfolio).permit(:title, :body, :subtitle))
+    @potfolio_item = Potfolio.new(params.require(:potfolio).permit(:title, :body, :subtitle, technologies_attributes: [:name]))
 
     respond_to do |format|
       if @potfolio_item.save
