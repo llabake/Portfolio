@@ -1,5 +1,6 @@
-class Topic < ApplicationRecord
+# frozen_string_literal: true
 
+class Topic < ApplicationRecord
   validates_presence_of :title
 
   has_many :blogs

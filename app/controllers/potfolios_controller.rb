@@ -12,6 +12,7 @@ class PotfoliosController < ApplicationController
   def angular
     @angular_potfolio_items = Potfolio.angular
   end
+
   def create
     @potfolio_item = Potfolio.new(params.require(:potfolio).permit(:title, :body, :subtitle))
 
