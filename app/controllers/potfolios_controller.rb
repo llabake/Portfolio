@@ -15,7 +15,7 @@ class PotfoliosController < ApplicationController
   end
 
   def create
-    @potfolio_item = Potfolio.new(params.require(:potfolio).permit(:title, :body, :subtitle, technologies_attributes: [:name]))
+    @potfolio_item = Potfolio.new(portfolio_params)
 
     respond_to do |format|
       if @potfolio_item.save
@@ -34,7 +34,7 @@ class PotfoliosController < ApplicationController
     @potfolio_item = Potfolio.find(params[:id])
 
     respond_to do |format|
-      if @potfolio_item.update(params.require(:potfolio).permit(:title, :body, :subtitle))
+      if @potfolio_item.update(portfolio_params)
         format.html { redirect_to potfolios_path, notice: 'The record successfully updated.' }
       else
         format.html { render :edit }
@@ -55,5 +55,14 @@ class PotfoliosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to potfolios_path, notice: 'Record was removed ' }
     end
+  end
+
+  private
+
+  def portfolio_params
+    params.require(:potfolio).permit(:title,
+                                     :body,
+                                     :subtitle,
+                                     technologies_attributes: [:name])
   end
 end
