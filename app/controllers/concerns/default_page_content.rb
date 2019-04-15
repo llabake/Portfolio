@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DefaultPageContent
   extend ActiveSupport::Concern
 
@@ -6,7 +8,7 @@ module DefaultPageContent
   end
 
   def set_page_defaults
-    @page_title = "Portfolio | My Portfolio Website"
-    @seo_keywords = "Labake "
+    @page_title = 'Portfolio | My Portfolio Website'
+    @seo_keywords = 'Labake '
   end
 end

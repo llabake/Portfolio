@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class PotfoliosController < ApplicationController
+  layout 'potfolio'
+
   def index
     @potfolio_items = Potfolio.all
   end
