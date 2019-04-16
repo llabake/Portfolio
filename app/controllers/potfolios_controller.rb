@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PotfoliosController < ApplicationController
+  before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy]
   layout 'potfolio'
 
   def index
@@ -29,11 +30,9 @@ class PotfoliosController < ApplicationController
   end
 
   def edit
-    @potfolio_item = Potfolio.find(params[:id])
   end
 
   def update
-    @potfolio_item = Potfolio.find(params[:id])
 
     respond_to do |format|
       if @potfolio_item.update(portfolio_params)
@@ -45,12 +44,10 @@ class PotfoliosController < ApplicationController
   end
 
   def show
-    @potfolio_item = Potfolio.find(params[:id])
   end
 
   def destroy
     # Perform the lookup
-    @potfolio_item = Potfolio.find(params[:id])
     # Destroy/delete the record
     @potfolio_item.destroy
     # Redirect
@@ -66,5 +63,11 @@ class PotfoliosController < ApplicationController
                                      :body,
                                      :subtitle,
                                      technologies_attributes: [:name])
+  end
+
+
+  def set_portfolio_item
+
+    @potfolio_item = Potfolio.find(params[:id])
   end
 end
