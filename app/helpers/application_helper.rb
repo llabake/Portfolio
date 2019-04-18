@@ -17,4 +17,8 @@ module ApplicationHelper
       content_tag(:p, greeting, class: 'source-greeting')
     end
   end
+
+  def copyright_generator
+    SardaunanViewTool::Renderer::copyright("Happygirl01", "amat victoria curam")
+  end
 end
