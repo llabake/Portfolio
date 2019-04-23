@@ -65,3 +65,4 @@ gem 'faker', '~> 1.6', '>= 1.6.6'
 
 # gem 'sardaunan_view_tool', git: 'https://github.com/llabake/sardaunan_view_tool'
 gem 'sardaunan_view_tool', '~> 0.1.0'
+gem 'petergate', '~> 2.0', '>= 2.0.1'
