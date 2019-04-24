@@ -3,6 +3,8 @@
 class PotfoliosController < ApplicationController
   before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy]
   layout 'potfolio'
+  access all: [:show, :index, :angular], user: {except: [:destroy, :create, :new, :update, :edit]}, site_admin: :all
+
 
   def index
     @potfolio_items = Potfolio.all
