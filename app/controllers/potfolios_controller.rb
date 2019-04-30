@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
 class PotfoliosController < ApplicationController
-  before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy]
+  before_action :set_portfolio_item, only: %i[edit show update destroy]
   layout 'potfolio'
-  access all: [:show, :index, :angular], user: {except: [:destroy, :create, :new, :update, :edit]}, site_admin: :all
-
+  access all: %i[show index angular], user: { except: %i[destroy create new update edit] }, site_admin: :all
 
   def index
     @potfolio_items = Potfolio.all
@@ -31,11 +30,9 @@ class PotfoliosController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
-
     respond_to do |format|
       if @potfolio_item.update(portfolio_params)
         format.html { redirect_to potfolios_path, notice: 'The record successfully updated.' }
@@ -45,8 +42,7 @@ class PotfoliosController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
   def destroy
     # Perform the lookup
@@ -67,9 +63,7 @@ class PotfoliosController < ApplicationController
                                      technologies_attributes: [:name])
   end
 
-
   def set_portfolio_item
-
     @potfolio_item = Potfolio.find(params[:id])
   end
 end
