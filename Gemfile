@@ -49,6 +49,7 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'meta_request', require: false
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -66,3 +67,5 @@ gem 'faker', '~> 1.6', '>= 1.6.6'
 # gem 'sardaunan_view_tool', git: 'https://github.com/llabake/sardaunan_view_tool'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'sardaunan_view_tool', '~> 0.1.0'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
