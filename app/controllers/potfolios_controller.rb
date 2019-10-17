@@ -6,7 +6,7 @@ class PotfoliosController < ApplicationController
   access all: %i[show index angular], user: { except: %i[destroy create new update edit] }, site_admin: :all
 
   def index
-    @potfolio_items = Potfolio.all
+    @potfolio_items = Potfolio.by_position
   end
 
   def new
