@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" data-id="<%=  potfolio_item.id %>">
   <%= image_tag potfolio_item.thumb_image unless potfolio_item.thumb_image.nil? %>
   <p class="card-text">
     <span>
@@ -6,4 +6,3 @@
     </span> <%= potfolio_item.subtitle%>
   </p>
 </div>
-

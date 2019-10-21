@@ -9,6 +9,13 @@ class PotfoliosController < ApplicationController
     @potfolio_items = Potfolio.by_position
   end
 
+  def sort
+    params[:order].each do |_key, value|
+      Potfolio.find(value[:id]).update(position: value[:position])
+    end
+    render nothing: true
+  end
+
   def new
     @potfolio_item = Potfolio.new
     3.times { @potfolio_item.technologies.build }
