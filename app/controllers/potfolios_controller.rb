@@ -68,6 +68,8 @@ class PotfoliosController < ApplicationController
     params.require(:potfolio).permit(:title,
                                      :body,
                                      :subtitle,
+                                     :main_image,
+                                     :thumb_image,
                                      technologies_attributes: [:name])
   end
 

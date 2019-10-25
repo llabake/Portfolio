@@ -1,5 +1,5 @@
 <div class="card" data-id="<%=  potfolio_item.id %>">
-  <%= image_tag potfolio_item.thumb_image unless potfolio_item.thumb_image.nil? %>
+  <%= image_tag potfolio_item.thumb_image.url unless potfolio_item.thumb_image.nil? %>
   <p class="card-text">
     <span>
       <%= link_to potfolio_item.title, potfolio_show_path(potfolio_item)%>
