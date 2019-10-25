@@ -18,7 +18,16 @@
     <div class="site-wrapper-inner">
 
       <div class="cover-container">
-        <div id="background"></div>
+<!--        <div id="background"></div>-->
+        <%= video_tag(
+              'Pexel.mp4',
+              id: 'background',
+              autoplay: true,
+              loop: true,
+              muted: true,
+              poster: 'Pexel.png'
+            )
+        %>
         <%= render "shared/application_nav" %>
 
         <%= yield %>
