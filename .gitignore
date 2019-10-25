@@ -27,3 +27,4 @@
 
 #Text editor
 .idea/
+.env
