@@ -19,7 +19,6 @@ class PotfoliosController < ApplicationController
 
   def new
     @potfolio_item = Potfolio.new
-    3.times { @potfolio_item.technologies.build }
   end
 
   def angular
@@ -70,7 +69,7 @@ class PotfoliosController < ApplicationController
                                      :subtitle,
                                      :main_image,
                                      :thumb_image,
-                                     technologies_attributes: [:name])
+                                     technologies_attributes: [:id, :name, :_destroy])
   end
 
   def set_portfolio_item
