@@ -1,7 +1,7 @@
 <%= form_with(model: @potfolio_item, local: true) do |form| %>
   <% if  @potfolio_item.errors.any? %>
     <%  @potfolio_item.errors.full_messages.each do |error| %>
-      <%= js add_gritter(error, title: "Sardaunan Portfolio", sticky: false) %>
+      <%= alert_generator error %>
     <% end %>
   <% end %>
   <div class="row">

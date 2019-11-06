@@ -18,6 +18,7 @@
     <%= render 'shared/potfolio_masthead' unless logged_in?(:site_admin)%>
 
     <%= yield %>
+    <%= alerts %>
 
     <%= render 'shared/potfolio_footer' %>
 
