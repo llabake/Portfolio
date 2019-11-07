@@ -14,7 +14,9 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'pages#home'
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
+  get 'tech-news', to: 'pages#tech_news'
+  root to: 'pages#home'
+
 end
